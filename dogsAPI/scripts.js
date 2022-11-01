@@ -2,9 +2,14 @@ let timer;
 let deleteFirstPhotoDelay;
 
 async function start() {
-    const response = await fetch("https://dog.ceo/api/breeds/list/all") 
-    const data = await response.json()
-    createBreedList(data.message)
+    try {
+        const response = await fetch("https://dog.ceo/api/breeds/list/all")
+        const data = await response.json()
+        createBreedList(data.message)
+    } catch {
+        console.log("There was a problem retreiving the breed list")
+    }
+    
 }
 
 start()
