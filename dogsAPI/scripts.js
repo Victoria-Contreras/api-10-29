@@ -7,7 +7,7 @@ async function start() {
         const data = await response.json()
         createBreedList(data.message)
     } catch {
-        console.log("There was a problem retreiving the breed list")
+        console.log("There was a problem retreiving the breed list", e)
     }
     
 }
